@@ -86,3 +86,8 @@ es:
       show: "Ver"
       edit: "Editar"
       delete: "Eliminar"
+  home:
+    banks: "Bancos"
+    total_banks: "Total de bancos registrados:"
+    suppliers: "Proveedores"
+    total_suppliers: "Total de proveedores registrados:"
