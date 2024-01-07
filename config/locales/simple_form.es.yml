@@ -7,29 +7,19 @@ es:
     labels:
       defaults:
         name: "Nombre"
+        nit: "NIT"
+        contact_name: "Nombre del contacto"
+        contact_phone: "Teléfono del contacto"
+        account_number: "Número de cuenta"
+        bank_id: "Banco"
     error_notification:
       default_message: "Por favor, corrija los siguientes errores:"
     placeholders:
       bank:
         name: "Ingrese el nombre del banco"
-  banks:
-    notices:
-      bank_created: "El banco fue creado exitosamente."
-      bank_updated: "El banco se actualizó exitosamente."
-      bank_destroyed: "El banco se eliminó exitosamente."
-    shared:
-      new_bank: "Nuevo Banco"
-      bank_id: "Id Banco"
-      edit: "Editar"
-      save: "Guardar"
-      back_to_banks: "Volver a Bancos"
-    index:
-      title: "Bancos"
-      view_details: "Ver Detalles"
-      delete: "Eliminar"
-    show:
-      title: "Detalles del Banco"
-    edit:
-      title: "Editar Banco"
-    create:
-      title: "Nuevo Banco"
+      supplier:
+        name: "Ingrese el nombre del proveedor"
+        nit: "Ingrese el número NIT"
+        contact_name: "Ingrese el nombre del contacto"
+        contact_phone: "Ingrese el número de teléfono del contacto"
+        account_number: "Ingrese el número de cuenta"

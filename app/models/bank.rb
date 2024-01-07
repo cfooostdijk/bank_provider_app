@@ -1,4 +1,6 @@
 class Bank < ApplicationRecord
-	validates :name, length: { maximum: 50 }
-	validates_presence_of :name
+  has_many :suppliers
+
+  validates :name, length: { maximum: 50 }
+  validates_presence_of :name
 end

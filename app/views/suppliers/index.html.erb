@@ -1,0 +1,9 @@
+<div class="container mx-auto">
+  <h1 class="text-3xl font-bold mb-4"><%= t('suppliers.index.title') %></h1>
+
+  <% @suppliers.each do |supplier| %>
+    <%= render partial: 'suppliers/supplier', locals: { supplier: supplier } %>
+  <% end %>
+
+  <%= link_to t('suppliers.shared.new_supplier'), new_supplier_path, class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" %>
+</div>

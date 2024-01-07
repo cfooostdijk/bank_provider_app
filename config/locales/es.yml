@@ -6,6 +6,17 @@ es:
           attributes:
             name:
               blank: "El campo no puede estar en blanco"
+        supplier:
+          attributes:
+            name:
+              blank: "El campo no puede estar en blanco"
+            bank:
+              required: "wtf"
+            contact_name:
+              blank: "El campo no puede estar en blanco"
+            nit:
+              invalid: "El formato del NIT es inválido"
+              blank: "El campo no puede estar en blanco"
   banks:
     notices:
       bank_created: "El banco fue creado exitosamente."
@@ -25,5 +36,38 @@ es:
       title: "Detalles del Banco"
     edit:
       title: "Editar Banco"
+    new:
+      title: "Nuevo Banco"
     create:
       title: "Nuevo Banco"
+  suppliers:
+    notices:
+      supplier_created: "El proveedor fue creado exitosamente."
+      supplier_updated: "El proveedor se actualizó exitosamente."
+      supplier_destroyed: "El proveedor se eliminó exitosamente."
+    shared:
+      new_supplier: "Nuevo Proveedor"
+      supplier_id: "Id Proveedor"
+      edit: "Editar"
+      save: "Guardar"
+      back_to_suppliers: "Volver a Proveedores"
+    index:
+      title: "Proveedores"
+      view_details: "Ver Detalles"
+      delete: "Eliminar"
+    show:
+      title: "Detalles del Proveedor"
+      nit: "NIT nro"
+      contact_name: "Nombre contacto"
+      contact_phone: "Telefono conctacto"
+      account_number: "Nro de cuenta"
+      bank_id: "Id banco"
+      name: "Nombre banco"
+    edit:
+      title: "Editar Proveedor"
+    new:
+      title: "Nuevo Proveedor"
+    create:
+      title: "Nuevo Proveedor"
+    form:
+      banks: "Seleccione un banco"
