@@ -33,5 +33,8 @@ module BankProviderApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Default locale configuration
+    config.i18n.default_locale = :es
   end
 end

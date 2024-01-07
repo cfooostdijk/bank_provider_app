@@ -51,9 +51,27 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# Use Il8n for translations [https://github.com/ruby-i18n/i18n]
+gem 'i18n'
+
+# Use simple_form for easy forms [https://rubygems.org/gems/simple_form]
+gem "simple_form"
+
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+	# See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+	gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+	# Use rspec for tests [https://github.com/rspec/rspec-rails]
+	gem 'rspec-rails'
+
+	# Use factory for tests [https://github.com/thoughtbot/factory_bot_rails]
+	gem 'factory_bot_rails'
+
+	# Use shoulda-matchers for tests [https://matchers.shoulda.io/]
+	gem 'shoulda-matchers'
+
+	# Use rails-controller-testing for tests [https://github.com/rails/rails-controller-testing]
+	gem 'rails-controller-testing'
 end
 
 group :development do
@@ -66,4 +84,3 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
