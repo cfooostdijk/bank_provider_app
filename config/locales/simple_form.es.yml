@@ -1,11 +1,17 @@
 es:
-  activerecord:
-    errors:
-      models:
-        bank:
-          attributes:
-            name:
-              blank: "El campo no puede estar en blanco"
+  simple_form:
+    "yes": 'Sí'
+    "no": 'No'
+    required:
+      mark: ''
+    labels:
+      defaults:
+        name: "Nombre"
+    error_notification:
+      default_message: "Por favor, corrija los siguientes errores:"
+    placeholders:
+      bank:
+        name: "Ingrese el nombre del banco"
   banks:
     notices:
       bank_created: "El banco fue creado exitosamente."

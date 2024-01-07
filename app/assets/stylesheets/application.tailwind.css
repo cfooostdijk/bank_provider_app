@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.flash {
+	padding: 1rem;
+	border-radius: 0.25rem;
+	margin-bottom: 1rem;
+}
+.flash-notice {
+	background-color: #d1e7dd;
+	color: #0c5460;
+}
+.flash-alert {
+	background-color: #f8d7da;
+	color: #721c24;
+}
