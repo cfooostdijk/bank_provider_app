@@ -11,12 +11,19 @@ es:
             name:
               blank: "El campo no puede estar en blanco"
             bank:
-              required: "wtf"
+              required: "Not working"
             contact_name:
               blank: "El campo no puede estar en blanco"
             nit:
               invalid: "El formato del NIT es inválido"
               blank: "El campo no puede estar en blanco"
+  views:
+    pagination:
+      first: "&laquo; Primero"
+      last: "Último &raquo;"
+      previous: "&lsaquo; Previo"
+      next: "Siguiente &rsaquo;"
+      truncate: "&hellip;"
   banks:
     notices:
       bank_created: "El banco fue creado exitosamente."
@@ -70,4 +77,12 @@ es:
     create:
       title: "Nuevo Proveedor"
     form:
-      banks: "Seleccione un banco"
+      name: "Nombre"
+      contact_name: "Nombre de contacto"
+      contact_phone: "Teléfono de contacto"
+      bank: "Banco"
+      account_number: "Número de cuenta"
+      actions: "Acciones"
+      show: "Ver"
+      edit: "Editar"
+      delete: "Eliminar"

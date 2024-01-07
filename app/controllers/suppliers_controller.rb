@@ -2,7 +2,7 @@ class SuppliersController < ApplicationController
   before_action :set_supplier, only: %i[ show edit update destroy ]
 
   def index
-    @suppliers = Supplier.all
+    @suppliers = Supplier.all.page params[:page]
   end
 
   def show

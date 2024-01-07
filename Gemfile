@@ -57,6 +57,12 @@ gem 'i18n'
 # Use simple_form for easy forms [https://rubygems.org/gems/simple_form]
 gem "simple_form"
 
+# Use kaminari for paginations [https://github.com/kaminari/kaminari]
+gem 'kaminari'
+
+# Use faker for seeds [https://github.com/faker-ruby/faker]
+gem 'faker'
+
 group :development, :test do
 	# See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
 	gem "debug", platforms: %i[ mri mingw x64_mingw ]
