@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <div>
+      <%= link_to 'Home', root_path, class: "text-blue-500 hover:underline mr-2" %>
+      <% if user_signed_in? %>
+        <%= link_to 'Sign out', custom_destroy_user_session_path, method: :delete %>
+      <% else %>
+        <a href="<%= new_user_session_path %>">Log in</a>
+        <a href="<%= new_user_registration_path %>">Sign up</a>
+      <% end %>
+    </div>
+
     <% flash.each do |key, value| %>
       <div class="flash <%= key == 'notice' ? 'flash-notice' : 'flash-alert' %>">
         <%= value %>

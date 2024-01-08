@@ -1,7 +1,16 @@
 es:
+  errors:
+    messages:
+      not_saved: 'El registro no pudo ser guardado.'
   activerecord:
     errors:
       models:
+        user:
+          attributes:
+            email:
+              taken: 'Correo ya está siendo usado'
+            password:
+              blank: 'El password no puede estar en blanco'
         bank:
           attributes:
             name:
@@ -24,6 +33,19 @@ es:
       previous: "&lsaquo; Previo"
       next: "Siguiente &rsaquo;"
       truncate: "&hellip;"
+  devise:
+    sessions:
+      signed_in: 'Sesión iniciada correctamente.'
+      invalid: 'Correo o contraseña incorrectos.'
+      signed_out: 'Sesión cerrada correctamente.'
+    registrations:
+      signed_up: 'Registro exitoso.'
+      email_taken: 'El correo ya está siendo usado.'
+    failure:
+      user:
+        not_found_in_database: "Usuario no registrado."
+        unauthenticated: "Usuario deslogueado correctamente."
+        invalid: 'Correo o contraseña incorrectos.'
   banks:
     notices:
       bank_created: "El banco fue creado exitosamente."
