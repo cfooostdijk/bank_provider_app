@@ -1,9 +1,10 @@
-<div class="container mx-auto">
-	<h1 class="text-3xl font-bold mb-4"><%= t('banks.show.title') %>: </h1>
+<div class="container mx-auto mt-5">
+    <h1 class="display-4 font-weight-bold mb-4"><%= t('banks.show.title') %>: <%= @bank.name %></h1>
 
-  <h2><%= @bank.name %></h2>
-	<p class="text-gray-600"><%= t('banks.shared.bank_id') %>: <%= @bank.id %></p>
+    <p class="text-muted"><%= t('banks.shared.bank_id') %>: <%= @bank.id %></p>
 
-	<%= link_to t('banks.shared.edit'), edit_bank_path(@bank), class: "text-yellow-500 hover:underline mr-2" %>
-	<%= link_to t('banks.shared.back_to_banks'), banks_path, class: "text-blue-500 hover:underline" %>
+    <div class="mt-4">
+        <%= link_to t('banks.shared.edit'), edit_bank_path(@bank), class: "btn btn-warning text-white mr-2" %>
+        <%= link_to t('banks.shared.back_to_banks'), banks_path, class: "btn btn-primary" %>
+    </div>
 </div>

@@ -1,29 +1,32 @@
-<%= simple_form_for(@supplier) do |form| %>
+<%= simple_form_for(@supplier, html: { class: 'mb-4' }) do |form| %>
   <% if @supplier.errors.any? %>
-    <div class="bg-red-100 text-red-500 p-2 mb-4 rounded-md">
-      <ul>
-        <%= form.error_notification %>
-      </ul>
+    <div class="alert alert-danger mb-4 rounded-md">
+      <%= form.error_notification %>
     </div>
   <% end %>
 
   <div class="mb-4">
-    <%= form.label :name, class: "block text-gray-600 font-bold mb-2" %>
-    <%= form.input :name, label: false %>
-    <%= form.label :nit, class: "block text-gray-600 font-bold mb-2" %>
-    <%= form.input :nit, label: false %>
-    <%= form.label :contact_name, class: "block text-gray-600 font-bold mb-2" %>
-    <%= form.input :contact_name, label: false %>
-    <%= form.label :contact_phone, class: "block text-gray-600 font-bold mb-2" %>
-    <%= form.input :contact_phone, label: false %>
-    <%= form.label :account_number, class: "block text-gray-600 font-bold mb-2" %>
-    <%= form.input :account_number, label: false %>
-    <%= form.label :bank_id, class: "block text-gray-600 font-bold mb-2" %>
-    <%= form.collection_select :bank_id, Bank.all || [], :id, :name, prompt: t('suppliers.form.banks') %>
-    <%= form.error :bank_id, message: t('suppliers.form.banks'), class: "text-red-500" %>
+    <%= form.label :name, class: "form-label" %>
+    <%= form.input :name, label: false, class: "form-control" %>
+
+    <%= form.label :nit, class: "form-label" %>
+    <%= form.input :nit, label: false, class: "form-control" %>
+
+    <%= form.label :contact_name, class: "form-label" %>
+    <%= form.input :contact_name, label: false, class: "form-control" %>
+
+    <%= form.label :contact_phone, class: "form-label" %>
+    <%= form.input :contact_phone, label: false, class: "form-control" %>
+
+    <%= form.label :account_number, class: "form-label" %>
+    <%= form.input :account_number, label: false, class: "form-control" %>
+
+    <%= form.label :bank_id, class: "form-label" %>
+    <%= form.collection_select :bank_id, Bank.all || [], :id, :name, { prompt: t('suppliers.form.banks') }, { class: "form-select" } %>
+    <%= form.error :bank_id, message: t('suppliers.form.banks'), class: "text-danger" %>
   </div>
 
   <div class="mb-4">
-    <%= form.submit t('suppliers.shared.save'), class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" %>
+    <%= form.submit t('suppliers.shared.save'), class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -1,7 +1,9 @@
-<div class="container mx-auto">
-	<h1 class="text-3xl font-bold mb-4"><%= t("banks.shared.back_to_banks") %></h1>
+<div class="container mx-auto mt-5">
+    <h1 class="text-3xl font-bold mb-4"><%= t("banks.shared.back_to_banks") %></h1>
 
-	<%= render 'form' %>
+    <%= render 'form' %>
 
-	<%= link_to t('banks.shared.back_to_banks'), banks_path, class: "text-blue-500 hover:underline" %>
+    <a href="<%= banks_path %>" class="btn btn-primary text-white">
+        <%= t('banks.shared.back_to_banks') %>
+    </a>
 </div>

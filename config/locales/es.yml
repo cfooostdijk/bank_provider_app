@@ -8,9 +8,13 @@ es:
         user:
           attributes:
             email:
+              blank: 'El mail no puede estar en blanco'
               taken: 'Correo ya está siendo usado'
             password:
               blank: 'El password no puede estar en blanco'
+              too_short: 'El password es muy corto'
+            password_confirmation:
+              confirmation: 'La confirmación de password no puede estar en blanco'
         bank:
           attributes:
             name:

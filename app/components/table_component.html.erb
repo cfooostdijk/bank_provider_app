@@ -1,33 +1,39 @@
-<div>
-  <h1 class="text-3xl font-bold mb-4 mt-4"><%= t("#{controller_name}.index.title") %></h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <h1 class="text-3xl font-bold mb-4 mt-4"><%= t("#{controller_name}.index.title") %></h1>
+      <% if @objects.any? %>
+        <div class="text-center">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <% @columns.each do |column| %>
+                  <th scope="col"><%= column.to_s.humanize %></th>
+                <% end %>
+                <th scope="col" class="actions-column">Acciones</th> <!-- Agregada clase personalizada -->
+              </tr>
+            </thead>
+            <tbody>
+              <% @objects.each do |object| %>
+                <tr>
+                  <% @columns.each do |column| %>
+                    <td><%= object.public_send(column) %></td>
+                  <% end %>
+                  <td class="actions-column"> <!-- Agregada clase personalizada -->
+                    <%= link_to raw('<i class="bi bi-eye"></i>'), send("#{controller_name.singularize.downcase}_path", object), class: 'btn btn-info btn-sm' %>
+                    <%= link_to raw('<i class="bi bi-pencil-square"></i>'), send("edit_#{controller_name.singularize.downcase}_path", object), class: 'btn btn-warning btn-sm' %>
+                    <%= link_to raw('<i class="bi bi-trash"></i>'), object, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      <% else %>
+        <p>Sin información en la tabla</p>
+      <% end %>
 
-  <% if @objects.any? %>
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-        <tr>
-          <% @columns.each do |column| %>
-            <th scope="col" class="px-6 py-3"><%= column.to_s.humanize %></th>
-          <% end %>
-          <th scope="col" class="px-6 py-3">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @objects.each do |object| %>
-          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-            <% @columns.each do |column| %>
-              <td class="px-6 py-4 border-b-4 border-r-4"><%= object.public_send(column) %></td>
-            <% end %>
-            <td class="px-6 py-4 border-b-4 border-r-4">
-              <%= link_to 'Editar', send("edit_#{controller_name.singularize.downcase}_path", object), class: "text-blue-500 hover:underline mr-2" %>
-              <%= link_to 'Eliminar', object, method: :delete, data: { confirm: '¿Estás seguro?' }, class: "text-red-500 hover:underline" %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  <% else %>
-    <p>Sin información en la tabla</p>
-  <% end %>
-
-  <%= link_to t("#{controller_name}.shared.new_#{controller_name.singularize.downcase}"), send("new_#{controller_name.singularize.downcase}_path"), class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 mt-4 inline-block" %>
+      <%= link_to t("#{controller_name}.shared.new_#{controller_name.singularize.downcase}"), send("new_#{controller_name.singularize.downcase}_path"), class: "btn btn-primary mt-4" %>
+    </div>
+  </div>
 </div>

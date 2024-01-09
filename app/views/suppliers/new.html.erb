@@ -1,7 +1,9 @@
-<div class="container mx-auto">
+<div class="container mx-auto mt-5">
   <h1 class="text-3xl font-bold mb-4"><%= t("suppliers.#{action_name}.title") %></h1>
 
   <%= render 'form' %>
 
-  <%= link_to t('suppliers.shared.back_to_suppliers'), suppliers_path, class: "text-blue-500 hover:underline" %>
+  <a href="<%= suppliers_path %>" class="btn btn-primary text-white">
+      <%= t('suppliers.shared.back_to_suppliers') %>
+  </a>
 </div>

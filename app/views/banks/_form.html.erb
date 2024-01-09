@@ -1,18 +1,18 @@
-<%= simple_form_for(@bank) do |form| %>
-	<% if @bank.errors.any? %>
-	  <div class="bg-red-100 text-red-500 p-2 mb-4 rounded-md">
-	    <ul>
-	      <%= form.error_notification %>
-	    </ul>
-	  </div>
-	<% end %>
+<%= simple_form_for(@bank, html: { class: 'mt-5' }) do |form| %>
+  <% if @bank.errors.any? %>
+    <div class="alert alert-danger p-2 mb-4 rounded-md">
+      <ul>
+        <%= form.error_notification %>
+      </ul>
+    </div>
+  <% end %>
 
-	<div class="mb-4">
-	  <%= form.label :name, class: "block text-gray-600 font-bold mb-2" %>
-	  <%= form.input :name, label: false %>
-	</div>
+  <div class="mb-4">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.input :name, label: false, class: "form-control" %>
+  </div>
 
-	<div class="mb-4">
-	  <%= form.submit t('banks.shared.save'), class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" %>
-	</div>
+  <div class="mb-4">
+    <%= form.button :submit, t('banks.shared.save'), class: "btn btn-primary" %>
+  </div>
 <% end %>
