@@ -8,4 +8,8 @@ class Supplier < ApplicationRecord
   validates :account_number, length: { maximum: 15 }, allow_blank: true
 
   validates_presence_of :name, :contact_name, :nit, :bank_id
+
+  def bank_name
+    Bank.find(self.bank_id).name
+  end
 end

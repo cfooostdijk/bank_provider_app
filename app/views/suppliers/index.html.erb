@@ -1,9 +1,3 @@
-<div class="container mx-auto">
-  <h1 class="text-3xl font-bold mb-4"><%= t('suppliers.index.title') %></h1>
+<%= render(TableComponent.new(@suppliers, [:id, :name, :contact_name, :contact_phone, :bank_name, :account_number])) %>
 
-  <%= render partial: 'suppliers/list' %>
-
-  <%= link_to t('suppliers.shared.new_supplier'), new_supplier_path, class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" %>
-
-  <%= paginate @suppliers %>
-</div>
+<%= paginate @suppliers %>

@@ -1,9 +1,1 @@
-<div class="container mx-auto">
-	<h1 class="text-3xl font-bold mb-4"><%= t('banks.index.title') %></h1>
-
-	<% @banks.each do |bank| %>
-	  <%= render partial: 'banks/bank', locals: { bank: bank } %>
-	<% end %>
-
-	<%= link_to t('banks.shared.new_bank'), new_bank_path, class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" %>
-</div>
+<%= render TableComponent.new(@banks, [:id, :name]) %>

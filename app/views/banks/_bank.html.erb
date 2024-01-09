@@ -1,8 +1,0 @@
-<div class="bg-white p-4 mb-4 shadow-md rounded-md">
-	<h2 class="text-xl font-bold mb-2"><%= bank.name %></h2>
-	<p class="text-gray-600"><%= t('banks.shared.bank_id') %>: <%= bank.id %></p>
-
-	<%= link_to t('banks.index.view_details'), bank_path(bank), class: "text-blue-500 hover:underline mr-2" %>
-	<%= link_to t('banks.shared.edit'), edit_bank_path(bank), class: "text-yellow-500 hover:underline mr-2" %>
-	<%= button_to t('banks.index.delete'), bank_path(bank), method: :delete, class: "text-red-500 hover:underline", remote: true %>
-</div>

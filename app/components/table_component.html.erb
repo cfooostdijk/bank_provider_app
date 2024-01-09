@@ -1,0 +1,33 @@
+<div>
+  <h1 class="text-3xl font-bold mb-4 mt-4"><%= t("#{controller_name}.index.title") %></h1>
+
+  <% if @objects.any? %>
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <% @columns.each do |column| %>
+            <th scope="col" class="px-6 py-3"><%= column.to_s.humanize %></th>
+          <% end %>
+          <th scope="col" class="px-6 py-3">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @objects.each do |object| %>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <% @columns.each do |column| %>
+              <td class="px-6 py-4 border-b-4 border-r-4"><%= object.public_send(column) %></td>
+            <% end %>
+            <td class="px-6 py-4 border-b-4 border-r-4">
+              <%= link_to 'Editar', send("edit_#{controller_name.singularize.downcase}_path", object), class: "text-blue-500 hover:underline mr-2" %>
+              <%= link_to 'Eliminar', object, method: :delete, data: { confirm: '¿Estás seguro?' }, class: "text-red-500 hover:underline" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>Sin información en la tabla</p>
+  <% end %>
+
+  <%= link_to t("#{controller_name}.shared.new_#{controller_name.singularize.downcase}"), send("new_#{controller_name.singularize.downcase}_path"), class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 mt-4 inline-block" %>
+</div>
